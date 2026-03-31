@@ -3,7 +3,7 @@ import { Playfair_Display, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio.sowmyavunnam.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sowmyavunnam.github.io";
 
 const display = Playfair_Display({
   variable: "--font-playfair",
