@@ -260,7 +260,7 @@ export default function Home() {
 
       <main id="top" className="mx-auto max-w-7xl px-5 pb-24 pt-8 md:px-8 md:pb-32 md:pt-12">
         <section className="animated-rise hero-panel overflow-hidden rounded-[2rem] border border-[var(--line)] p-6 md:p-10 lg:p-14">
-          <div className="grid gap-8 xl:grid-cols-[1.08fr_0.92fr] xl:items-center">
+          <div className="hero-layout grid gap-8 xl:grid-cols-[1.08fr_0.92fr]">
             <div>
               <h1 className="font-display max-w-[12ch] text-5xl leading-[0.95] tracking-tight md:text-7xl">
                 Turning complex research into decisions teams can move on.

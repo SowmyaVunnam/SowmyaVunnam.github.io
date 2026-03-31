@@ -195,10 +195,24 @@ img {
   display: grid;
   gap: 1rem;
   align-content: start;
+  align-self: start;
 }
 
 .hero-photo {
   min-height: 18.5rem;
+}
+
+.hero-layout {
+  align-items: start;
+}
+
+.hero-layout > :first-child,
+.hero-layout > :last-child {
+  align-self: start;
+}
+
+.profile-image-shell {
+  align-self: start;
 }
 
 .panel-dark {
