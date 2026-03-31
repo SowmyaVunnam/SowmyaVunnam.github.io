@@ -7,6 +7,7 @@ import {
   ChartNoAxesCombined,
   CircleDot,
   Database,
+  FileSpreadsheet,
   GraduationCap,
   HeartPulse,
   LibraryBig,
@@ -15,9 +16,11 @@ import {
   MapPin,
   Phone,
   Presentation,
+  Rows3,
   School,
   Sparkles,
   Target,
+  TerminalSquare,
   Workflow,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -123,7 +126,32 @@ const projects = [
   },
 ];
 
-const tools = ["SQL", "Python", "Power BI", "Stata", "Excel", "Google Workspace"];
+const skills = [
+  {
+    label: "SQL",
+    icon: Database,
+  },
+  {
+    label: "Python",
+    icon: TerminalSquare,
+  },
+  {
+    label: "Power BI",
+    icon: BarChart3,
+  },
+  {
+    label: "Stata",
+    icon: Rows3,
+  },
+  {
+    label: "Excel",
+    icon: FileSpreadsheet,
+  },
+  {
+    label: "Google Workspace",
+    icon: Presentation,
+  },
+];
 
 const education = [
   {
@@ -431,11 +459,16 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {tools.map((item) => (
-                <span key={item} className="pill-tag">
-                  {item}
-                </span>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {skills.map(({ label, icon: Icon }) => (
+                <div key={label} className="skill-tile rounded-[1.2rem] border border-[var(--line)] p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="icon-shell icon-shell-sm">
+                      <Icon className="h-4 w-4 text-[color:var(--accent)]" />
+                    </div>
+                    <p className="text-sm font-semibold">{label}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </article>
