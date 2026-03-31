@@ -165,7 +165,7 @@ const structuredData = {
   jobTitle: "Strategy and Analytics Consultant",
   description:
     "Strategy and analytics consultant focused on healthcare technology, market intelligence, dashboard storytelling, and decision-ready research.",
-  image: "/profile-photo.png",
+  image: "/profile-photo.jpg",
   url: "/",
   email: "mailto:sowmya.vunnam@gmail.com",
   telephone: "+91 72493 88640",
@@ -259,7 +259,7 @@ export default function Home() {
               <div className="profile-card">
                 <div className="profile-image-shell">
                   <Image
-                    src="/profile-photo.png"
+                    src="/profile-photo.jpg"
                     alt="Profile photo of Sowmya Vunnam"
                     width={768}
                     height={768}
