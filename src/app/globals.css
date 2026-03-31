@@ -380,6 +380,10 @@ button:focus-visible {
   background: rgba(255, 255, 255, 0.42);
 }
 
+.pill-with-icon {
+  gap: 0.45rem;
+}
+
 .pill-tag {
   padding: 0.68rem 0.98rem;
   font-size: 0.82rem;
@@ -427,6 +431,39 @@ button:focus-visible {
 
 .dark .icon-shell {
   background: rgba(79, 209, 194, 0.1);
+}
+
+.icon-shell-sm {
+  width: 2.15rem;
+  height: 2.15rem;
+  border-radius: 0.8rem;
+}
+
+.education-row {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.dark .education-row {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.education-divider {
+  margin: 0 0.25rem;
+  color: var(--accent);
+}
+
+.project-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.project-meta-divider {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--accent) 58%, transparent);
+  margin: 0 0.2rem;
 }
 
 .contact-link {

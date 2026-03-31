@@ -5,16 +5,20 @@ import {
   BarChart3,
   BriefcaseBusiness,
   ChartNoAxesCombined,
+  CircleDot,
   Database,
   GraduationCap,
   HeartPulse,
+  LibraryBig,
   Link as LinkIcon,
   Mail,
   MapPin,
   Phone,
   Presentation,
+  School,
   Sparkles,
   Target,
+  Workflow,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
@@ -49,9 +53,18 @@ const impactMetrics = [
 ];
 
 const quickFacts = [
-  "Healthcare strategy and analytics",
-  "Hyderabad | remote and hybrid ready",
-  "Power BI, SQL, Python, Stata",
+  {
+    label: "Healthcare strategy and analytics",
+    icon: HeartPulse,
+  },
+  {
+    label: "Hyderabad | remote and hybrid ready",
+    icon: MapPin,
+  },
+  {
+    label: "Power BI, SQL, Python, Stata",
+    icon: Database,
+  },
 ];
 
 const valueCards = [
@@ -117,28 +130,28 @@ const education = [
     school: "University of Birmingham",
     credential: "MSc Economics",
     timeline: "2022 - 2024",
-    summary: "Quantitative methods, market dynamics, and ESG research.",
+    icon: GraduationCap,
     highlights: ["Economic Modeling", "Game Theory", "Statistical Analysis"],
   },
   {
     school: "Symbiosis School for Liberal Arts",
     credential: "BA Liberal Arts & Sciences",
     timeline: "2017 - 2021",
-    summary: "Economics-led interdisciplinary training across policy, business, and research.",
+    icon: LibraryBig,
     highlights: ["Econometrics", "Economic Research", "Business Planning"],
   },
   {
     school: "Silver Oaks International Schools",
     credential: "12th Grade, Humanities",
     timeline: "2016 - 2017",
-    summary: "Humanities distinction with recognition in storytelling and communication.",
+    icon: School,
     highlights: ["Mass Communication", "Report Writing", "Short Films"],
   },
   {
     school: "Silver Oaks International Schools",
     credential: "10th Grade, CBSE",
     timeline: "2014 - 2015",
-    summary: "Strong academic foundation with early recognition in writing and analysis.",
+    icon: School,
     highlights: ["Critical Thinking", "Creative Writing", "Leadership"],
   },
 ];
@@ -236,9 +249,10 @@ export default function Home() {
               </div>
 
               <div className="mt-7 flex flex-wrap gap-3">
-                {quickFacts.map((item) => (
-                  <span key={item} className="pill-tag">
-                    {item}
+                {quickFacts.map(({ label, icon: Icon }) => (
+                  <span key={label} className="pill-tag pill-with-icon">
+                    <Icon className="h-3.5 w-3.5 text-[color:var(--accent)]" />
+                    {label}
                   </span>
                 ))}
               </div>
@@ -296,7 +310,10 @@ export default function Home() {
         <section id="work" className="delay-3 animated-rise mt-20">
           <div className="section-heading">
             <div>
-              <p className="section-kicker">Recent Work</p>
+              <p className="section-kicker">
+                <BriefcaseBusiness className="h-3.5 w-3.5" />
+                Recent Work
+              </p>
               <h2 className="font-display mt-4 text-3xl md:text-5xl">Places where I helped teams move faster.</h2>
             </div>
           </div>
@@ -310,8 +327,15 @@ export default function Home() {
                       {job.company}
                     </p>
                     <h3 className="mt-2 text-2xl font-semibold">{job.role}</h3>
-                    <p className="muted mt-2 text-sm">
-                      {job.timeline} | {job.location}
+                    <p className="muted mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+                      <span className="inline-flex items-center gap-1.5">
+                        <CircleDot className="h-3.5 w-3.5 text-[color:var(--accent)]" />
+                        {job.timeline}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <MapPin className="h-3.5 w-3.5 text-[color:var(--accent)]" />
+                        {job.location}
+                      </span>
                     </p>
                   </div>
                   <div className="timeline-mark">{`0${index + 1}`}</div>
@@ -325,7 +349,10 @@ export default function Home() {
         <section id="projects" className="delay-4 animated-rise mt-20">
           <div className="section-heading">
             <div>
-              <p className="section-kicker">Projects</p>
+              <p className="section-kicker">
+                <Workflow className="h-3.5 w-3.5" />
+                Projects
+              </p>
               <h2 className="font-display mt-4 text-3xl md:text-5xl">A quick look at how I work with data.</h2>
             </div>
           </div>
@@ -344,8 +371,12 @@ export default function Home() {
                 </div>
                 <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
                   <h3 className="text-xl font-semibold">{project.title}</h3>
-                  <p className="rounded-full border border-[var(--line)] px-3 py-1 text-xs font-medium text-[color:var(--muted)]">
-                    {project.stack} | {project.year}
+                  <p className="project-meta rounded-full border border-[var(--line)] px-3 py-1 text-xs font-medium text-[color:var(--muted)]">
+                    <Presentation className="h-3.5 w-3.5" />
+                    {project.stack}
+                    <span className="project-meta-divider" />
+                    <CircleDot className="h-3.5 w-3.5" />
+                    {project.year}
                   </p>
                 </div>
                 <p className="muted reading-width mt-4 text-sm leading-7">{project.contribution}</p>
@@ -356,7 +387,10 @@ export default function Home() {
 
         <section id="about" className="mt-20 grid gap-6 xl:grid-cols-[1fr_0.95fr]">
           <article className="section-card rounded-[1.9rem] p-7 md:p-9">
-            <p className="section-kicker">About</p>
+            <p className="section-kicker">
+              <Sparkles className="h-3.5 w-3.5" />
+              About
+            </p>
             <h2 className="font-display mt-4 text-3xl md:text-5xl">Background, tools, and areas I enjoy working in.</h2>
             <div className="mt-6 flex flex-wrap gap-3">
               {focusAreas.map((item) => (
@@ -375,20 +409,24 @@ export default function Home() {
           </article>
 
           <article className="section-card rounded-[1.9rem] p-7 md:p-9">
-            <p className="section-kicker">Education</p>
-            <div className="mt-6 space-y-4">
-              {education.map((item) => (
-                <article key={`${item.school}-${item.credential}`} className="soft-block rounded-[1.3rem] p-4">
-                  <div className="flex gap-3">
-                    <GraduationCap className="mt-1 h-4 w-4 shrink-0 text-[color:var(--accent)]" />
-                    <div>
-                      <h3 className="text-base font-semibold">{item.school}</h3>
-                      <p className="mt-1 text-sm font-medium text-[color:var(--foreground)]">
-                        {item.credential} | {item.timeline}
+            <p className="section-kicker">
+              <GraduationCap className="h-3.5 w-3.5" />
+              Education
+            </p>
+            <div className="mt-6 space-y-3">
+              {education.map(({ school, credential, timeline, highlights, icon: Icon }) => (
+                <article key={`${school}-${credential}`} className="education-row rounded-[1.2rem] border border-[var(--line)] p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="icon-shell icon-shell-sm">
+                      <Icon className="h-4 w-4 text-[color:var(--accent)]" />
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="text-base font-semibold">{school}</h3>
+                      <p className="muted mt-1 text-sm">
+                        {credential} <span className="education-divider">|</span> {timeline}
                       </p>
-                      <p className="muted mt-2 text-sm leading-6">{item.summary}</p>
                       <div className="mt-3 flex flex-wrap gap-2">
-                        {item.highlights.map((highlight) => (
+                        {highlights.map((highlight) => (
                           <span key={highlight} className="mini-tag">
                             {highlight}
                           </span>
