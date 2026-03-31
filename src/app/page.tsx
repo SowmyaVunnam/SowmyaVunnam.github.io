@@ -117,32 +117,28 @@ const education = [
     school: "University of Birmingham",
     credential: "MSc Economics",
     timeline: "2022 - 2024",
-    summary:
-      "Focused on quantitative methods and market dynamics. Dissertation on ESG performance and its limits on firm behaviour.",
+    summary: "Quantitative methods, market dynamics, and ESG research.",
     highlights: ["Economic Modeling", "Game Theory", "Statistical Analysis"],
   },
   {
     school: "Symbiosis School for Liberal Arts",
     credential: "BA Liberal Arts & Sciences",
     timeline: "2017 - 2021",
-    summary:
-      "Interdisciplinary grounding in economics, political science, and business. Thesis on GDP as a measure of national welfare.",
+    summary: "Economics-led interdisciplinary training across policy, business, and research.",
     highlights: ["Econometrics", "Economic Research", "Business Planning"],
   },
   {
     school: "Silver Oaks International Schools",
     credential: "12th Grade, Humanities",
     timeline: "2016 - 2017",
-    summary:
-      "Academic excellence award in Humanities. Best storytelling at the Times NIE short film award.",
+    summary: "Humanities distinction with recognition in storytelling and communication.",
     highlights: ["Mass Communication", "Report Writing", "Short Films"],
   },
   {
     school: "Silver Oaks International Schools",
     credential: "10th Grade, CBSE",
     timeline: "2014 - 2015",
-    summary:
-      "9.8 CGPA with distinction in Ei ASSET diagnostic testing and creative writing certificates across Grades 8 to 10.",
+    summary: "Strong academic foundation with early recognition in writing and analysis.",
     highlights: ["Critical Thinking", "Creative Writing", "Leadership"],
   },
 ];
@@ -380,9 +376,9 @@ export default function Home() {
 
           <article className="section-card rounded-[1.9rem] p-7 md:p-9">
             <p className="section-kicker">Education</p>
-            <div className="mt-6 space-y-5">
+            <div className="mt-6 space-y-4">
               {education.map((item) => (
-                <article key={`${item.school}-${item.credential}`} className="soft-block rounded-[1.3rem] p-5">
+                <article key={`${item.school}-${item.credential}`} className="soft-block rounded-[1.3rem] p-4">
                   <div className="flex gap-3">
                     <GraduationCap className="mt-1 h-4 w-4 shrink-0 text-[color:var(--accent)]" />
                     <div>
@@ -390,8 +386,8 @@ export default function Home() {
                       <p className="mt-1 text-sm font-medium text-[color:var(--foreground)]">
                         {item.credential} | {item.timeline}
                       </p>
-                      <p className="muted reading-width mt-3 text-sm leading-7">{item.summary}</p>
-                      <div className="mt-4 flex flex-wrap gap-2">
+                      <p className="muted mt-2 text-sm leading-6">{item.summary}</p>
+                      <div className="mt-3 flex flex-wrap gap-2">
                         {item.highlights.map((highlight) => (
                           <span key={highlight} className="mini-tag">
                             {highlight}
