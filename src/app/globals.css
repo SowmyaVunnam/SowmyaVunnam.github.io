@@ -68,6 +68,10 @@ img {
   height: auto;
 }
 
+.reading-width {
+  max-width: 32rem;
+}
+
 .card {
   background: var(--card);
   border-color: var(--line);
@@ -182,9 +186,19 @@ img {
 }
 
 .profile-photo {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 16%;
+}
+
+.hero-side {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.hero-photo {
+  min-height: 26rem;
 }
 
 .panel-dark {
@@ -370,6 +384,7 @@ button:focus-visible {
   padding: 0.68rem 0.98rem;
   font-size: 0.82rem;
   font-weight: 600;
+  line-height: 1.35;
 }
 
 .mini-tag {
@@ -465,6 +480,10 @@ button:focus-visible {
   .section-heading {
     align-items: start;
   }
+
+  .hero-photo {
+    min-height: 22rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -478,6 +497,14 @@ button:focus-visible {
     height: 3.25rem;
     border-radius: 1rem;
     font-size: 1rem;
+  }
+
+  .reading-width {
+    max-width: 100%;
+  }
+
+  .hero-photo {
+    min-height: 18rem;
   }
 }
 

@@ -54,17 +54,15 @@ export default function OpenGraphImage() {
               color: "#8de9dc",
             }}
           >
-            Recruiter-ready portfolio
+            Sowmya Vunnam
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "24px", maxWidth: 860 }}>
-            <div style={{ fontSize: 72, lineHeight: 1.02, fontWeight: 700 }}>
-              Sowmya Vunnam
-            </div>
+            <div style={{ fontSize: 72, lineHeight: 1.02, fontWeight: 700 }}>Turning complex research into decisions.</div>
             <div style={{ fontSize: 42, lineHeight: 1.15, color: "#f2e9dc" }}>
               Strategy, analytics, market intelligence, and healthcare storytelling.
             </div>
             <div style={{ fontSize: 28, lineHeight: 1.35, color: "rgba(248,243,234,0.80)" }}>
-              Built for recruiters, hiring managers, and teams looking for structured insight that leads to action.
+              Structured insight for teams building products, strategies, and growth plans that need clearer direction.
             </div>
           </div>
           <div style={{ display: "flex", gap: "18px" }}>

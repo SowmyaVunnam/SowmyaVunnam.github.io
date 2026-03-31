@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sowmya Vunnam | Strategy and Analytics Portfolio",
     description:
-      "Recruiter-ready portfolio for strategy, analytics, market intelligence, and healthcare technology roles.",
+      "Strategy and analytics portfolio focused on healthcare technology, market intelligence, and decision-ready storytelling.",
     url: "/",
     siteName: "Sowmya Vunnam Portfolio",
     type: "website",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sowmya Vunnam | Strategy and Analytics Portfolio",
     description:
-      "Recruiter-ready portfolio focused on healthcare strategy, analytics, market intelligence, and decision storytelling.",
+      "Strategy and analytics portfolio focused on healthcare technology, market intelligence, and decision-ready storytelling.",
     images: ["/twitter-image"],
   },
   icons: {
