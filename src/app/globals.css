@@ -193,7 +193,7 @@ img {
 
 .hero-side {
   display: grid;
-  gap: 1rem;
+  gap: 1.2rem;
   align-content: start;
   align-self: start;
 }
@@ -378,6 +378,11 @@ button:focus-visible {
   padding: 0.85rem 0.95rem;
   background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-note {
+  display: grid;
+  gap: 0.9rem;
 }
 
 .dark .glass-row {

@@ -298,22 +298,6 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-
-              <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                {overviewHighlights.map(({ title, detail, icon: Icon }) => (
-                  <div key={title} className="soft-block rounded-[1.25rem] p-4">
-                    <div className="flex items-start gap-3">
-                      <div className="icon-shell icon-shell-sm">
-                        <Icon className="h-4 w-4 text-[color:var(--accent)]" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold">{title}</p>
-                        <p className="muted mt-1 text-sm leading-6">{detail}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="hero-side">
@@ -336,6 +320,22 @@ export default function Home() {
                   <ChartNoAxesCombined className="h-4 w-4" />
                   <span>Focused on turning market complexity into sharper product and GTM decisions</span>
                 </div>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
+                {overviewHighlights.map(({ title, detail, icon: Icon }) => (
+                  <div key={title} className="soft-block rounded-[1.25rem] p-4">
+                    <div className="flex items-start gap-3">
+                      <div className="icon-shell icon-shell-sm">
+                        <Icon className="h-4 w-4 text-[color:var(--accent)]" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold">{title}</p>
+                        <p className="muted mt-1 text-sm leading-6">{detail}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
