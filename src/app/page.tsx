@@ -165,6 +165,19 @@ const focusAreas = [
   "Decision synthesis",
 ];
 
+const aboutDetails = [
+  {
+    icon: HeartPulse,
+    title: "What I focus on",
+    description: "I enjoy work that sits between research, business thinking, and practical execution.",
+  },
+  {
+    icon: Presentation,
+    title: "How I contribute",
+    description: "I bring structure to ambiguity and make insights easier for teams to use in real decisions.",
+  },
+];
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -392,6 +405,25 @@ export default function Home() {
               About
             </p>
             <h2 className="font-display mt-4 text-3xl md:text-5xl">Background, tools, and areas I enjoy working in.</h2>
+            <p className="muted reading-width mt-5 text-sm leading-7">
+              My background combines economics, analytics, and communication, which helps me move comfortably between
+              research depth and business clarity.
+            </p>
+            <div className="mt-6 grid gap-3">
+              {aboutDetails.map(({ icon: Icon, title, description }) => (
+                <div key={title} className="soft-block rounded-[1.2rem] p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="icon-shell icon-shell-sm">
+                      <Icon className="h-4 w-4 text-[color:var(--accent)]" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold">{title}</p>
+                      <p className="muted mt-1 text-sm leading-6">{description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
             <div className="mt-6 flex flex-wrap gap-3">
               {focusAreas.map((item) => (
                 <span key={item} className="mini-tag">
