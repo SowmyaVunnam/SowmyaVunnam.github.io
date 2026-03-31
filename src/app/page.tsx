@@ -7,7 +7,6 @@ import {
   ChartNoAxesCombined,
   CircleDot,
   Database,
-  FileSpreadsheet,
   GraduationCap,
   HeartPulse,
   LibraryBig,
@@ -16,11 +15,9 @@ import {
   MapPin,
   Phone,
   Presentation,
-  Rows3,
   School,
   Sparkles,
   Target,
-  TerminalSquare,
   Workflow,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -123,33 +120,6 @@ const projects = [
     image: "/project-netflix-analytics.svg",
     contribution:
       "Modeled title performance against metadata and ratings to surface stronger acquisition and ROI signals.",
-  },
-];
-
-const skills = [
-  {
-    label: "SQL",
-    icon: Database,
-  },
-  {
-    label: "Python",
-    icon: TerminalSquare,
-  },
-  {
-    label: "Power BI",
-    icon: BarChart3,
-  },
-  {
-    label: "Stata",
-    icon: Rows3,
-  },
-  {
-    label: "Excel",
-    icon: FileSpreadsheet,
-  },
-  {
-    label: "Google Workspace",
-    icon: Presentation,
   },
 ];
 
@@ -271,6 +241,10 @@ export default function Home() {
               <p className="muted reading-width mt-5 text-base leading-8 md:text-lg">
                 I work across strategy, analytics, and market insight with a current focus on healthcare technology.
                 My strength is turning difficult information into direction product, growth, and leadership teams can use.
+              </p>
+              <p className="muted reading-width mt-4 text-sm leading-7">
+                That usually means combining market research, competitive context, and analytical tools into something
+                a team can align on quickly.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -457,18 +431,6 @@ export default function Home() {
                 <span key={item} className="mini-tag">
                   {item}
                 </span>
-              ))}
-            </div>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {skills.map(({ label, icon: Icon }) => (
-                <div key={label} className="skill-tile rounded-[1.2rem] border border-[var(--line)] p-4">
-                  <div className="flex items-center gap-3">
-                    <div className="icon-shell icon-shell-sm">
-                      <Icon className="h-4 w-4 text-[color:var(--accent)]" />
-                    </div>
-                    <p className="text-sm font-semibold">{label}</p>
-                  </div>
-                </div>
               ))}
             </div>
           </article>
