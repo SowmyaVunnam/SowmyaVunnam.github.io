@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Market intelligence dashboard visual</title>
+  <desc id="desc">An abstract dashboard illustration representing category growth and content gap analysis.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#12374d" />
+      <stop offset="55%" stop-color="#154132" />
+      <stop offset="100%" stop-color="#0f2622" />
+    </linearGradient>
+    <linearGradient id="chart" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#8de9dc" />
+      <stop offset="100%" stop-color="#f1b36b" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" rx="36" fill="url(#bg)" />
+  <circle cx="190" cy="120" r="94" fill="#8de9dc" opacity="0.12" />
+  <circle cx="1050" cy="122" r="82" fill="#f1b36b" opacity="0.15" />
+  <rect x="78" y="78" width="1044" height="544" rx="28" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" />
+  <rect x="124" y="136" width="252" height="138" rx="22" fill="rgba(255,255,255,0.09)" />
+  <rect x="410" y="136" width="304" height="138" rx="22" fill="rgba(255,255,255,0.09)" />
+  <rect x="748" y="136" width="326" height="138" rx="22" fill="rgba(255,255,255,0.09)" />
+  <rect x="124" y="320" width="950" height="238" rx="26" fill="rgba(255,255,255,0.08)" />
+  <path d="M174 508l128-98 128 36 132-124 126 56 140-110 120 84" fill="none" stroke="url(#chart)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+  <g fill="#8de9dc">
+    <circle cx="302" cy="410" r="10" />
+    <circle cx="430" cy="446" r="10" />
+    <circle cx="562" cy="322" r="10" />
+    <circle cx="688" cy="378" r="10" />
+    <circle cx="828" cy="268" r="10" />
+    <circle cx="948" cy="352" r="10" />
+  </g>
+  <text x="124" y="112" font-family="Verdana, sans-serif" font-size="26" letter-spacing="3" fill="#8de9dc">
+    MARKET INTELLIGENCE DASHBOARD
+  </text>
+</svg>

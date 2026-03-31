@@ -1,269 +1,568 @@
-import { Phone, Mail, Linkedin, Code, BarChart3, Target, TrendingUp, Users, Award } from "lucide-react";
+import Image from "next/image";
+import Script from "next/script";
+import {
+  ArrowDownToLine,
+  ArrowUpRight,
+  BarChart3,
+  BriefcaseBusiness,
+  ChartNoAxesCombined,
+  Database,
+  GraduationCap,
+  HeartPulse,
+  Link as LinkIcon,
+  Mail,
+  MapPin,
+  Phone,
+  Presentation,
+  Sparkles,
+  Target,
+} from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+
+const navigation = [
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Toolkit", href: "#toolkit" },
+  { label: "Contact", href: "#contact" },
+];
+
+const impactMetrics = [
+  {
+    value: "30%",
+    label: "organic traffic growth after leading a website restructure and SEO refresh",
+    icon: Sparkles,
+  },
+  {
+    value: "25%",
+    label: "increase in youth participation across social entrepreneurship initiatives",
+    icon: Target,
+  },
+  {
+    value: "20%",
+    label: "faster content-gap analysis through interactive dashboard design",
+    icon: BarChart3,
+  },
+  {
+    value: "10%",
+    label: "outperformance identified through benchmark strategy modeling",
+    icon: Database,
+  },
+];
+
+const quickFacts = [
+  "Recruiter-friendly, single-page portfolio",
+  "Open to strategy, analytics, market intelligence, and product insight roles",
+  "Based in Hyderabad with remote and hybrid readiness",
+  "Healthcare technology and decision storytelling focus",
+];
+
+const proofStrip = [
+  { value: "2+", label: "strategy and program roles across consulting and mission-led organizations" },
+  { value: "Health-tech", label: "current specialization with ABDM, provider workflows, and GTM research" },
+  { value: "Power BI + SQL", label: "tooling used to turn analysis into decision-ready outputs" },
+];
+
+const capabilities = [
+  {
+    title: "Market Intelligence",
+    description:
+      "I map sectors, competitors, and whitespace so product and growth teams can make decisions with less guesswork.",
+    icon: ChartNoAxesCombined,
+  },
+  {
+    title: "Analytics Storytelling",
+    description:
+      "I turn spreadsheets, dashboards, and research notes into clear recommendations leaders can quickly act on.",
+    icon: Presentation,
+  },
+  {
+    title: "Product Strategy Support",
+    description:
+      "I help teams understand adoption friction, prioritize opportunities, and shape stronger GTM narratives.",
+    icon: HeartPulse,
+  },
+];
+
+const focusAreas = [
+  "Healthcare technology",
+  "ABDM readiness and compliance research",
+  "Competitive benchmarking",
+  "Dashboard-driven insights",
+  "Go-to-market support",
+  "Strategic research synthesis",
+];
+
+const experience = [
+  {
+    role: "Strategy and Analytics Consultant",
+    company: "Pranik (Mondee Group)",
+    timeline: "Aug 2025 - Present",
+    location: "Hyderabad, India",
+    challenge:
+      "A healthcare product team needed sharper market visibility and a clearer path through ABDM integration and provider onboarding complexity.",
+    action:
+      "Led market mapping, created a healthcare intelligence knowledge base, benchmarked product parity, and translated fragmented research into actionable GTM and product recommendations.",
+    outcome:
+      "Built decision-ready strategy outputs leadership could use across roadmap planning, product positioning, and sales communication.",
+  },
+  {
+    role: "Sustainability Program Manager",
+    company: "Touch A Life Foundation Inc.",
+    timeline: "Dec 2021 - Dec 2022",
+    location: "California, USA (Remote)",
+    challenge:
+      "The organization needed stronger digital visibility and clearer program storytelling to drive participation and engagement.",
+    action:
+      "Directed website restructuring, led SEO improvements, and shaped research-backed content and program communication around youth entrepreneurship and SDG participation.",
+    outcome:
+      "Increased organic website traffic by 30% and improved participation in key SDG initiatives by 25%.",
+  },
+];
+
+const projects = [
+  {
+    title: "AnimeList Market Intelligence Dashboard",
+    stack: "Power BI",
+    year: "2024",
+    image: "/project-market-dashboard.svg",
+    question: "Which genres and production patterns signal the best whitespace opportunities?",
+    method: "Built a Power BI dashboard to compare growth patterns, sub-genre momentum, and content supply shifts.",
+    result:
+      "Reduced time-to-insight for content-gap analysis and made it easier to surface high-potential content bets.",
+  },
+  {
+    title: "Netflix Viewership and Content Strategy Analytics",
+    stack: "Power BI, Excel",
+    year: "2024",
+    image: "/project-netflix-analytics.svg",
+    question: "How can performance, metadata, and ratings guide smarter content acquisition choices?",
+    method: "Modeled viewership performance against title metadata and ratings patterns to identify strategic signals.",
+    result:
+      "Highlighted content opportunities with stronger expected viewership and better ROI potential.",
+  },
+];
+
+const tools = ["SQL", "Python", "Power BI", "Stata", "Excel", "Google Workspace"];
+
+const education = [
+  "MSc Economics, University of Birmingham, UK",
+  "Applied Business Analytics, Indian School of Business, Hyderabad",
+  "BA Liberal Arts (Economics), Symbiosis School for Liberal Arts, Pune",
+];
+
+const supportAreas = [
+  "Market mapping and competitor intelligence",
+  "Healthcare product and GTM research",
+  "Dashboard storytelling for non-technical stakeholders",
+  "Structured synthesis for leadership decks and hiring conversations",
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Sowmya Vunnam",
+  jobTitle: "Strategy and Analytics Consultant",
+  description:
+    "Strategy and analytics consultant focused on healthcare technology, market intelligence, dashboard storytelling, and decision-ready research.",
+  image: "/profile-photo.png",
+  url: "/",
+  email: "mailto:sowmya.vunnam@gmail.com",
+  telephone: "+91 72493 88640",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Hyderabad",
+    addressCountry: "India",
+  },
+  sameAs: ["https://linkedin.com/in/sowmya-vunnam"],
+};
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 font-sans transition-colors">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm z-10 border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white">Sowmya Vunnam</h1>
-            <div className="flex items-center space-x-8">
-              <div className="hidden md:flex space-x-8">
-                <a href="#about" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
-                <a href="#skills" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a>
-                <a href="#experience" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Experience</a>
-                <a href="#projects" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
-                <a href="#contact" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
-              </div>
-              <ThemeToggle />
-            </div>
-          </div>
-        </div>
-      </nav>
+    <div className="min-h-screen">
+      <Script
+        id="person-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
-      {/* Hero Section */}
-      <section id="about" className="pt-24 pb-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8">
-            <div className="w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
-              <span className="text-4xl font-bold text-white">SV</span>
-            </div>
-          </div>
-          <h1 className="text-6xl font-extrabold text-gray-900 dark:text-white mb-4 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
+      <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[color:var(--surface)]/82 backdrop-blur-xl">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 md:px-8">
+          <a href="#top" className="font-display text-xl tracking-tight">
             Sowmya Vunnam
-          </h1>
-          <h2 className="text-2xl text-gray-600 dark:text-gray-400 mb-8 font-light">Strategy and Analytics Consultant</h2>
-          <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto font-light">
-            Strategy and Analytics Consultant with a background in Economics and specialized expertise in healthcare technology market mapping. Proven track record in translating complex datasets into actionable Go-To-Market strategies through Python, SQL, and Power BI. Focused on driving evidence-based growth and strategic impact within digital health ecosystems.
-          </p>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 px-6 bg-white dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">Key Achievements</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">30%</div>
-              <p className="text-gray-600 dark:text-gray-400">Increase in organic traffic</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">25%</div>
-              <p className="text-gray-600 dark:text-gray-400">Increase in SDG participation</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BarChart3 className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">20%</div>
-              <p className="text-gray-600 dark:text-gray-400">Faster content-gap analysis</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">10%</div>
-              <p className="text-gray-600 dark:text-gray-400">Outperformance on benchmarks</p>
-            </div>
+          </a>
+          <div className="hidden items-center gap-6 text-sm text-[color:var(--muted)] lg:flex">
+            {navigation.map((item) => (
+              <a key={item.href} href={item.href} className="transition hover:text-[color:var(--foreground)]">
+                {item.label}
+              </a>
+            ))}
           </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-4xl font-bold text-gray-900 dark:text-white mb-16 text-center">Skills</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="flex items-center mb-6">
-                <Code className="w-8 h-8 text-blue-600 mr-3" />
-                <h4 className="text-2xl font-semibold text-gray-800 dark:text-white">Tools & Languages</h4>
-              </div>
-              <div className="space-y-3">
-                {['SQL', 'Python', 'Stata', 'Power BI', 'MS Excel (Advanced)', 'Google Workspace'].map((skill) => (
-                  <span key={skill} className="inline-block bg-white dark:bg-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 mr-2 mb-2 shadow-sm border border-gray-200 dark:border-gray-700">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="flex items-center mb-6">
-                <BarChart3 className="w-8 h-8 text-green-600 mr-3" />
-                <h4 className="text-2xl font-semibold text-gray-800 dark:text-white">Data Analysis</h4>
-              </div>
-              <div className="space-y-3">
-                {['Requirement Gathering', 'Data Visualization', 'Market Research', 'Competitive Benchmarking'].map((skill) => (
-                  <span key={skill} className="inline-block bg-white dark:bg-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 mr-2 mb-2 shadow-sm border border-gray-200 dark:border-gray-700">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-purple-50 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="flex items-center mb-6">
-                <Target className="w-8 h-8 text-purple-600 mr-3" />
-                <h4 className="text-2xl font-semibold text-gray-800 dark:text-white">Core Competencies</h4>
-              </div>
-              <div className="space-y-3">
-                {['Critical Thinking', 'Problem-Solving', 'Strategic Positioning', 'Project Management'].map((skill) => (
-                  <span key={skill} className="inline-block bg-white dark:bg-gray-800 px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 mr-2 mb-2 shadow-sm border border-gray-200 dark:border-gray-700">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+          <div className="flex items-center gap-3">
+            <a href="/sowmya-vunnam-resume.pdf" className="button-secondary hidden md:inline-flex" download>
+              Resume
+              <ArrowDownToLine className="h-4 w-4" />
+            </a>
+            <ThemeToggle />
           </div>
-        </div>
-      </section>
+        </nav>
+      </header>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-20 px-6 bg-white dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-4xl font-bold text-gray-900 dark:text-white mb-16 text-center">Experience</h3>
-          <div className="space-y-12">
-            <div className="bg-gray-50 dark:bg-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="flex items-start">
-                <div className="w-4 h-4 bg-blue-500 rounded-full mt-2 mr-6 flex-shrink-0"></div>
-                <div className="flex-1">
-                  <h4 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2">Strategy and Analytics Consultant</h4>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 font-medium">Aug. 2025 – Present | Pranik (Mondee Group), Hyderabad, India</p>
-                  <ul className="space-y-4 text-gray-700 dark:text-gray-300">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"></span>
-                      Spearheaded market mapping of the Ayushman Bharat Digital Mission (ABDM) to define 100% of integration requirements, providing a clear strategic roadmap for HIP/HIU compliance.
+      <main id="top" className="mx-auto max-w-7xl px-5 pb-24 pt-8 md:px-8 md:pb-32 md:pt-12">
+        <section className="animated-rise hero-panel overflow-hidden rounded-[2rem] border border-[var(--line)] p-6 md:p-10 lg:p-14">
+          <div className="grid gap-8 xl:grid-cols-[1.2fr_0.8fr] xl:items-center">
+            <div>
+              <h1 className="font-display mt-6 max-w-5xl text-5xl leading-[0.95] tracking-tight md:text-7xl">
+                Strategy and analytics consultant for healthcare, market intelligence, and decision-ready storytelling.
+              </h1>
+              <p className="muted mt-6 max-w-3xl text-base leading-8 md:text-lg">
+                I help teams turn market ambiguity, fragmented research, and dashboard-heavy analysis into focused
+                decisions. My work combines business analytics, healthcare technology context, and clear executive
+                communication so leaders can move faster with more confidence.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href="/sowmya-vunnam-resume.pdf" className="button-primary" download>
+                  Download resume
+                  <ArrowDownToLine className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://linkedin.com/in/sowmya-vunnam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button-secondary"
+                >
+                  View LinkedIn
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </div>
+
+              <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                {proofStrip.map((item) => (
+                  <div key={item.value} className="stat-strip">
+                    <span className="stat-value">{item.value}</span>
+                    <span className="stat-label">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                {quickFacts.map((item) => (
+                  <span key={item} className="pill-tag">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <aside className="profile-panel">
+              <div className="profile-card">
+                <div className="profile-image-shell">
+                  <Image
+                    src="/profile-photo.png"
+                    alt="Profile photo of Sowmya Vunnam"
+                    width={768}
+                    height={768}
+                    className="profile-image profile-photo"
+                    priority
+                  />
+                </div>
+                <div className="panel-dark rounded-[1.6rem] p-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/65">Quick facts</p>
+                  <div className="mt-5 space-y-3">
+                    <div className="glass-row">
+                      <BriefcaseBusiness className="h-4 w-4" />
+                      <span>Targeting strategy, analytics, and market intelligence roles</span>
+                    </div>
+                    <div className="glass-row">
+                      <MapPin className="h-4 w-4" />
+                      <span>Hyderabad, India | open to remote and hybrid opportunities</span>
+                    </div>
+                    <div className="glass-row">
+                      <ChartNoAxesCombined className="h-4 w-4" />
+                      <span>Healthcare research, product insight, dashboards, and GTM narratives</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section className="delay-1 animated-rise mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {impactMetrics.map(({ value, label, icon: Icon }) => (
+            <article key={value} className="card rounded-[1.6rem] border p-5">
+              <div className="icon-shell">
+                <Icon className="h-5 w-5 text-[color:var(--accent)]" />
+              </div>
+              <p className="mt-5 text-3xl font-semibold tracking-tight md:text-4xl">{value}</p>
+              <p className="muted mt-3 text-sm leading-7">{label}</p>
+            </article>
+          ))}
+        </section>
+
+        <section id="about" className="delay-2 animated-rise mt-20 grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
+          <article className="section-card rounded-[1.9rem] p-7 md:p-9">
+            <p className="section-kicker">Why Hire Me</p>
+            <h2 className="font-display mt-4 text-3xl leading-tight md:text-5xl">
+              I make research easier to trust, easier to communicate, and easier to act on.
+            </h2>
+            <p className="muted mt-5 max-w-3xl text-base leading-8">
+              Recruiters and hiring managers usually need to answer one question fast: can this person turn complexity
+              into momentum? My edge is that I work comfortably across research, analytics, and storytelling. I can
+              investigate a market, structure the signal, and turn the result into something a product, growth, or
+              leadership team can actually use.
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {capabilities.map(({ title, description, icon: Icon }) => (
+                <div key={title} className="soft-block rounded-[1.4rem] p-5">
+                  <div className="icon-shell">
+                    <Icon className="h-5 w-5 text-[color:var(--accent)]" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold">{title}</h3>
+                  <p className="muted mt-3 text-sm leading-7">{description}</p>
+                </div>
+              ))}
+            </div>
+          </article>
+
+          <article className="section-card rounded-[1.9rem] p-7 md:p-9">
+            <p className="section-kicker">Role Fit</p>
+            <div className="grid gap-5 md:grid-cols-2">
+              <div className="soft-block rounded-[1.4rem] p-5">
+                <p className="eyebrow">Best suited for</p>
+                <ul className="mt-4 space-y-3">
+                  {supportAreas.map((item) => (
+                    <li key={item} className="muted flex gap-3 text-sm leading-7">
+                      <span className="mt-2 h-2 w-2 rounded-full bg-[color:var(--accent)]" />
+                      <span>{item}</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"></span>
-                      Established a centralized Healthcare Intelligence Knowledge Base to track competitive trends, enabling the product team to benchmark feature parity across 5+ major platforms.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"></span>
-                      Identified provider onboarding friction points through detailed user flow analysis, leading to prioritized feature updates that significantly enhanced the onboarding experience.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"></span>
-                      Transformed raw research into value proposition frameworks for GTM preparation, delivering structured content that professionalized executive sales decks and stakeholder presentations.
-                    </li>
-                  </ul>
+                  ))}
+                </ul>
+              </div>
+              <div className="soft-block rounded-[1.4rem] p-5">
+                <p className="eyebrow">Focus areas</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {focusAreas.map((item) => (
+                    <span key={item} className="mini-tag">
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="flex items-start">
-                <div className="w-4 h-4 bg-green-500 rounded-full mt-2 mr-6 flex-shrink-0"></div>
-                <div className="flex-1">
-                  <h4 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2">Sustainability Program Manager</h4>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6 font-medium">Dec. 2021 – Dec. 2022 | Touch A Life Foundation Inc., California, USA (Remote)</p>
-                  <ul className="space-y-4 text-gray-700 dark:text-gray-300">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-4 flex-shrink-0"></span>
-                      Directed a cross-functional website restructuring to optimize digital presence, achieving a 30% increase in unique organic traffic over a 12-month period.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-4 flex-shrink-0"></span>
-                      Orchestrated the annual Transformers Challenge to promote social entrepreneurship, scaling the youth program and increasing active participation in UN SDG initiatives by 25%.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-4 flex-shrink-0"></span>
-                      Implemented an SEO-driven content strategy by authoring 17 research blogs, substantially improving digital engagement metrics and brand visibility for sustainability programs.
-                    </li>
-                  </ul>
+          </article>
+        </section>
+
+        <section id="experience" className="delay-3 animated-rise mt-20">
+          <div className="section-heading">
+            <div>
+              <p className="section-kicker">Experience Highlights</p>
+              <h2 className="font-display mt-4 text-3xl md:text-5xl">Work framed around challenge, action, and result.</h2>
+            </div>
+            <p className="muted max-w-xl text-sm leading-7">
+              The site is structured for recruiter scanning, so each role shows the business context, the work I owned,
+              and the outcome the team got from it.
+            </p>
+          </div>
+
+          <div className="mt-8 space-y-6">
+            {experience.map((job, index) => (
+              <article key={job.role} className="section-card rounded-[1.9rem] p-7 md:p-9">
+                <div className="grid gap-6 lg:grid-cols-[auto_1fr]">
+                  <div className="timeline-mark">{`0${index + 1}`}</div>
+                  <div>
+                    <div className="flex flex-wrap items-start justify-between gap-4">
+                      <div>
+                        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--accent)]">
+                          {job.company}
+                        </p>
+                        <h3 className="mt-2 text-2xl font-semibold">{job.role}</h3>
+                        <p className="muted mt-2 text-sm">
+                          {job.timeline} | {job.location}
+                        </p>
+                      </div>
+                      <div className="inline-flex rounded-full border border-[var(--line)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--accent)]">
+                        Recruiter snapshot
+                      </div>
+                    </div>
+                    <div className="mt-6 grid gap-4 md:grid-cols-3">
+                      <div className="soft-block rounded-[1.2rem] p-4">
+                        <p className="eyebrow">Challenge</p>
+                        <p className="muted mt-3 text-sm leading-7">{job.challenge}</p>
+                      </div>
+                      <div className="soft-block rounded-[1.2rem] p-4">
+                        <p className="eyebrow">Action</p>
+                        <p className="muted mt-3 text-sm leading-7">{job.action}</p>
+                      </div>
+                      <div className="soft-block rounded-[1.2rem] p-4">
+                        <p className="eyebrow">Outcome</p>
+                        <p className="muted mt-3 text-sm leading-7">{job.outcome}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="projects" className="delay-4 animated-rise mt-20">
+          <div className="section-heading">
+            <div>
+              <p className="section-kicker">Selected Projects</p>
+              <h2 className="font-display mt-4 text-3xl md:text-5xl">Mini case studies with a clearer business narrative.</h2>
+            </div>
+            <p className="muted max-w-xl text-sm leading-7">
+              Each project now communicates the strategic question, the method, and the decision value it created.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-6 xl:grid-cols-2">
+            {projects.map((project) => (
+              <article key={project.title} className="project-card rounded-[1.9rem] p-7 md:p-9">
+                <div className="overflow-hidden rounded-[1.4rem] border border-[var(--line)]">
+                  <Image
+                    src={project.image}
+                    alt={`Illustrated visual for ${project.title}`}
+                    width={900}
+                    height={520}
+                    className="project-image"
+                  />
+                </div>
+                <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--accent)]">
+                    {project.stack}
+                  </p>
+                  <p className="rounded-full border border-[var(--line)] px-3 py-1 text-xs font-medium text-[color:var(--muted)]">
+                    {project.year}
+                  </p>
+                </div>
+                <h3 className="mt-5 text-2xl font-semibold">{project.title}</h3>
+                <div className="mt-6 grid gap-4 md:grid-cols-3">
+                  <div>
+                    <p className="eyebrow">Question</p>
+                    <p className="muted mt-2 text-sm leading-7">{project.question}</p>
+                  </div>
+                  <div>
+                    <p className="eyebrow">Method</p>
+                    <p className="muted mt-2 text-sm leading-7">{project.method}</p>
+                  </div>
+                  <div>
+                    <p className="eyebrow">Result</p>
+                    <p className="muted mt-2 text-sm leading-7">{project.result}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="toolkit" className="mt-20 grid gap-6 xl:grid-cols-[1fr_0.9fr]">
+          <article className="section-card rounded-[1.9rem] p-7 md:p-9">
+            <p className="section-kicker">Toolkit</p>
+            <h2 className="font-display mt-4 text-3xl md:text-5xl">Tools and training that support the work.</h2>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {tools.map((item) => (
+                <span key={item} className="pill-tag">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </article>
+
+          <article className="section-card rounded-[1.9rem] p-7 md:p-9">
+            <p className="section-kicker">Education</p>
+            <ul className="mt-6 space-y-4">
+              {education.map((item) => (
+                <li key={item} className="muted flex gap-3 text-sm leading-7">
+                  <GraduationCap className="mt-1 h-4 w-4 shrink-0 text-[color:var(--accent)]" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </section>
+
+        <section className="mt-20">
+          <article className="section-card rounded-[1.9rem] p-7 md:p-9">
+            <div className="section-heading">
+              <div>
+                <p className="section-kicker">What I Can Help With</p>
+                <h2 className="font-display mt-4 text-3xl md:text-5xl">Where I add value quickly on a team.</h2>
+              </div>
+              <p className="muted max-w-xl text-sm leading-7">
+                This section makes the portfolio easier to scan in hiring funnels where recruiters need a fast match
+                between your needs and my strengths.
+              </p>
+            </div>
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {supportAreas.map((item) => (
+                <div key={item} className="soft-block rounded-[1.2rem] p-5">
+                  <p className="text-base font-semibold">{item}</p>
+                </div>
+              ))}
+            </div>
+          </article>
+        </section>
+
+        <section id="contact" className="mt-20">
+          <div className="contact-panel rounded-[2rem] border border-[var(--line)] p-7 md:p-10">
+            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+              <div>
+                <p className="section-kicker text-white/72">Contact</p>
+                <h2 className="font-display mt-4 max-w-3xl text-3xl leading-tight text-white md:text-5xl">
+                  Hiring for someone who can bring structure, insight, and clear strategic communication?
+                </h2>
+                <p className="mt-5 max-w-2xl text-sm leading-8 text-white/76">
+                  I am currently open to strategy, analytics, market intelligence, and product insight opportunities.
+                  The quickest way to evaluate fit is to review my resume or connect through email or LinkedIn.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a href="/sowmya-vunnam-resume.pdf" className="button-light" download>
+                    Download resume
+                    <ArrowDownToLine className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/sowmya-vunnam"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="button-light"
+                  >
+                    Open LinkedIn
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="grid gap-3">
+                <a href="mailto:sowmya.vunnam@gmail.com" className="contact-link">
+                  <Mail className="h-4 w-4" />
+                  sowmya.vunnam@gmail.com
+                </a>
+                <a href="tel:+917249388640" className="contact-link">
+                  <Phone className="h-4 w-4" />
+                  +91 72493 88640
+                </a>
+                <a
+                  href="https://linkedin.com/in/sowmya-vunnam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-link"
+                >
+                  <LinkIcon className="h-4 w-4" />
+                  linkedin.com/in/sowmya-vunnam
+                </a>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      {/* Education Section */}
-      <section className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-4xl font-bold text-gray-900 dark:text-white mb-16 text-center">Education</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-slate-50 to-gray-100 dark:from-slate-800 dark:to-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">MSc Economics</h4>
-              <p className="text-gray-600 dark:text-gray-400">University of Birmingham, Birmingham, UK</p>
-            </div>
-            <div className="bg-gradient-to-br from-slate-50 to-gray-100 dark:from-slate-800 dark:to-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">Virtual Course in Applied Business Analytics</h4>
-              <p className="text-gray-600 dark:text-gray-400">Indian School of Business, Hyderabad, India</p>
-            </div>
-            <div className="bg-gradient-to-br from-slate-50 to-gray-100 dark:from-slate-800 dark:to-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">BA in Liberal Arts</h4>
-              <p className="text-gray-600 dark:text-gray-400">Economics Major, Political Science & Business Minors</p>
-              <p className="text-gray-600 dark:text-gray-400">Symbiosis School for Liberal Arts, Pune, India</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-20 px-6 bg-white dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-4xl font-bold text-gray-900 dark:text-white mb-16 text-center">Projects</h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 dark:bg-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <h4 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">AnimeList Market Intelligence Dashboard</h4>
-              <p className="text-blue-600 dark:text-blue-400 mb-6 font-medium flex items-center">
-                <BarChart3 className="w-5 h-5 mr-2" />
-                Power BI | 2024
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Engineered a dynamic analysis tool to identify high-growth sub-genres and production trends within the AnimeList database, accelerating content-gap analysis by 20% through automated visualization of performance KPIs.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <h4 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Netflix Viewership & Content Strategy Analytics</h4>
-              <p className="text-blue-600 dark:text-blue-400 mb-6 font-medium flex items-center">
-                <BarChart3 className="w-5 h-5 mr-2" />
-                Power BI, Excel | 2024
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Processed multi-regional metadata to analyze viewership hours against IMDB ratings, developing a predictive genre-performance model that identified high-ROI acquisition opportunities and outperformed benchmarks by 10%.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">Get In Touch</h3>
-          <p className="text-xl text-gray-700 dark:text-gray-300 mb-8 font-light">
-            I'm always open to discussing new opportunities and interesting projects.
-          </p>
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
-            <a href="tel:+917249388640" className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              <Phone className="w-5 h-5 mr-2" />
-              +91 7249388640
-            </a>
-            <a href="mailto:sowmya.vunnam@gmail.com" className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              <Mail className="w-5 h-5 mr-2" />
-              sowmya.vunnam@gmail.com
-            </a>
-            <a href="https://linkedin.com/in/sowmyavunnam" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              <Linkedin className="w-5 h-5 mr-2" />
-              LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-8 px-6 bg-gray-900 dark:bg-black text-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-gray-400">© 2026 Sowmya Vunnam. All rights reserved.</p>
+      <footer className="border-t border-[var(--line)] px-5 py-6 md:px-8">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 text-xs text-[color:var(--muted)]">
+          <p>Copyright 2026 Sowmya Vunnam</p>
+          <p>Built for recruiter visibility, shareability, and fast comprehension.</p>
         </div>
       </footer>
     </div>
