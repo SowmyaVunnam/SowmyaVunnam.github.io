@@ -7,6 +7,7 @@ import {
   ChartNoAxesCombined,
   CircleDot,
   Database,
+  FileSearch,
   GraduationCap,
   HeartPulse,
   LibraryBig,
@@ -15,6 +16,7 @@ import {
   MapPin,
   Phone,
   Presentation,
+  ScanSearch,
   School,
   Sparkles,
   Target,
@@ -54,16 +56,41 @@ const impactMetrics = [
 
 const quickFacts = [
   {
-    label: "Healthcare strategy and analytics",
+    label: "Healthcare strategy",
     icon: HeartPulse,
   },
   {
-    label: "Hyderabad | remote and hybrid ready",
-    icon: MapPin,
+    label: "Market intelligence",
+    icon: ScanSearch,
   },
   {
     label: "Power BI, SQL, Python, Stata",
     icon: Database,
+  },
+  {
+    label: "Competitive benchmarking",
+    icon: FileSearch,
+  },
+  {
+    label: "Decision storytelling",
+    icon: Presentation,
+  },
+  {
+    label: "Economic research",
+    icon: ChartNoAxesCombined,
+  },
+];
+
+const overviewHighlights = [
+  {
+    title: "What I work on",
+    detail: "Healthcare markets, product positioning, and growth questions that need clearer signal.",
+    icon: BriefcaseBusiness,
+  },
+  {
+    title: "What I bring",
+    detail: "Structured research, analytical framing, and outputs teams can use without extra translation.",
+    icon: Sparkles,
   },
 ];
 
@@ -271,6 +298,22 @@ export default function Home() {
                   </span>
                 ))}
               </div>
+
+              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                {overviewHighlights.map(({ title, detail, icon: Icon }) => (
+                  <div key={title} className="soft-block rounded-[1.25rem] p-4">
+                    <div className="flex items-start gap-3">
+                      <div className="icon-shell icon-shell-sm">
+                        <Icon className="h-4 w-4 text-[color:var(--accent)]" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold">{title}</p>
+                        <p className="muted mt-1 text-sm leading-6">{detail}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="hero-side">
@@ -290,8 +333,8 @@ export default function Home() {
                   <span>Strategy, analytics, and market intelligence</span>
                 </div>
                 <div className="glass-row">
-                  <MapPin className="h-4 w-4" />
-                  <span>Hyderabad, India | open to remote and hybrid roles</span>
+                  <ChartNoAxesCombined className="h-4 w-4" />
+                  <span>Focused on turning market complexity into sharper product and GTM decisions</span>
                 </div>
               </div>
             </div>

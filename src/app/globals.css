@@ -186,9 +186,9 @@ img {
 }
 
 .profile-photo {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 5 / 4;
   object-fit: cover;
-  object-position: center 16%;
+  object-position: center 12%;
 }
 
 .hero-side {
@@ -198,7 +198,7 @@ img {
 }
 
 .hero-photo {
-  min-height: 26rem;
+  min-height: 18.5rem;
 }
 
 .panel-dark {
@@ -519,7 +519,7 @@ button:focus-visible {
   }
 
   .hero-photo {
-    min-height: 22rem;
+    min-height: 17rem;
   }
 }
 
@@ -541,7 +541,7 @@ button:focus-visible {
   }
 
   .hero-photo {
-    min-height: 18rem;
+    min-height: 15rem;
   }
 }
 
