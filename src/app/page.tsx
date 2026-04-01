@@ -83,13 +83,13 @@ const quickFacts = [
 
 const overviewHighlights = [
   {
-    title: "What I work on",
-    detail: "Healthcare markets, product positioning, and growth questions that need clearer signal.",
+    title: "What I work through",
+    detail: "Market mapping, benchmark reviews, and research-led problem solving for product and strategy decisions.",
     icon: BriefcaseBusiness,
   },
   {
-    title: "What I bring",
-    detail: "Structured research, analytical framing, and outputs teams can use without extra translation.",
+    title: "What I deliver",
+    detail: "Clear analysis, concise recommendations, and decision-ready outputs leaders can use quickly.",
     icon: Sparkles,
   },
 ];
@@ -183,23 +183,24 @@ const education = [
 
 const focusAreas = [
   "Healthcare technology",
-  "Competitive benchmarking",
-  "Dashboard storytelling",
-  "Go-to-market support",
   "Market mapping",
-  "Decision synthesis",
+  "Competitive analysis",
+  "Research synthesis",
+  "Business storytelling",
+  "Quantitative analysis",
+  "Stakeholder communication",
 ];
 
 const aboutDetails = [
   {
-    icon: HeartPulse,
-    title: "What I focus on",
-    description: "I enjoy work that sits between research, business thinking, and practical execution.",
+    icon: GraduationCap,
+    title: "Academic foundation",
+    description: "Economics training gave me a strong base in quantitative thinking, market behaviour, and structured research.",
   },
   {
     icon: Presentation,
-    title: "How I contribute",
-    description: "I bring structure to ambiguity and make insights easier for teams to use in real decisions.",
+    title: "Working style",
+    description: "I tend to work best where analysis needs to become clear communication, alignment, and practical next steps.",
   },
 ];
 
@@ -449,7 +450,7 @@ export default function Home() {
               <Sparkles className="h-3.5 w-3.5" />
               About
             </p>
-            <h2 className="font-display mt-4 text-3xl md:text-5xl">Background, tools, and areas I enjoy working in.</h2>
+            <h2 className="font-display mt-4 text-3xl md:text-5xl">Foundations, strengths, and the way I tend to work.</h2>
             <p className="muted reading-width mt-5 text-sm leading-7">
               My background combines economics, analytics, and communication, which helps me move comfortably between
               research depth and business clarity.
