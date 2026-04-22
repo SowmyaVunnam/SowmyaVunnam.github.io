@@ -139,10 +139,237 @@ img {
     var(--card);
 }
 
+.article-shell {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at top right, rgba(13, 111, 104, 0.1), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.32), transparent 24%),
+    var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.dark .article-shell {
+  background:
+    radial-gradient(circle at top right, rgba(79, 209, 194, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 24%),
+    rgba(15, 24, 35, 0.94);
+}
+
 .dark .project-card {
   background:
     radial-gradient(circle at top right, rgba(79, 209, 194, 0.12), transparent 24%),
     linear-gradient(180deg, rgba(20, 31, 43, 0.98), rgba(16, 25, 35, 0.98));
+}
+
+.article-aside,
+.article-card,
+.result-card,
+.article-footer-callout {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.dark .article-aside,
+.dark .article-card,
+.dark .result-card,
+.dark .article-footer-callout {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.article-stat {
+  display: grid;
+  gap: 0.35rem;
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.dark .article-stat {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.article-stat span {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.article-stat strong {
+  font-size: 0.95rem;
+}
+
+.article-body {
+  max-width: 48rem;
+}
+
+.article-body h2 {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-top: 3.4rem;
+  margin-bottom: 1.15rem;
+}
+
+.article-body h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.article-body p,
+.article-body li {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.article-body p + p {
+  margin-top: 1.05rem;
+}
+
+.article-body ul,
+.article-body ol {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+.article-body li::marker {
+  color: var(--accent);
+}
+
+.callout {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 1.4rem;
+  padding: 1.1rem;
+  margin: 1.6rem 0;
+  background: color-mix(in oklab, var(--accent) 8%, transparent);
+}
+
+.article-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1.4rem 0;
+}
+
+.article-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  border-radius: 1.25rem;
+  padding: 1rem;
+}
+
+.article-card > span {
+  font-weight: 700;
+}
+
+.article-card p {
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.result-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1.4rem 0;
+}
+
+.result-card {
+  border-radius: 1.35rem;
+  padding: 1.15rem;
+}
+
+.result-card h3 {
+  margin-top: 0.75rem;
+}
+
+.result-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--line);
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.result-row strong {
+  color: var(--foreground);
+}
+
+.article-table-wrap {
+  overflow-x: auto;
+  margin: 1.4rem 0;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+}
+
+.article-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.dark .article-table {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.article-table th,
+.article-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.95rem;
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.article-table th {
+  color: var(--foreground);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.article-table td {
+  color: var(--muted);
+}
+
+.article-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.reference-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--foreground);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--accent) 45%, transparent);
+  text-underline-offset: 0.25rem;
+}
+
+.article-footer-callout {
+  display: flex;
+  gap: 1rem;
+  border-radius: 1.35rem;
+  margin-top: 3rem;
+  padding: 1.1rem;
+}
+
+@media (min-width: 768px) {
+  .article-grid,
+  .result-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .contact-panel {

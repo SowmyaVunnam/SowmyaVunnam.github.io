@@ -3,6 +3,7 @@ import Script from "next/script";
 import {
   ArrowUpRight,
   BarChart3,
+  BookOpenText,
   BriefcaseBusiness,
   ChartNoAxesCombined,
   CircleDot,
@@ -27,6 +28,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 const navigation = [
   { label: "Work", href: "#work" },
   { label: "Projects", href: "#projects" },
+  { label: "Writing", href: "#writing" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
@@ -149,6 +151,14 @@ const projects = [
       "Modeled title performance against metadata and ratings to surface stronger acquisition and ROI signals.",
   },
 ];
+
+const writing = {
+  title: "We Blind-Tested AI Clinician Copilots In Real Consultations",
+  description:
+    "A field-style benchmark comparing Gemini, Qwen, and GPT-5.4 across clinician-evaluated consultation turns.",
+  href: "/blog/clinical-ai-performance-benchmarks",
+  tags: ["Clinical AI", "Model benchmarking", "ELO + Glicko-2"],
+};
 
 const education = [
   {
@@ -442,6 +452,39 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section id="writing" className="mt-20">
+          <article className="section-card rounded-[1.9rem] p-7 md:p-9">
+            <div className="section-heading">
+              <div>
+                <p className="section-kicker">
+                  <BookOpenText className="h-3.5 w-3.5" />
+                  Writing
+                </p>
+                <h2 className="font-display mt-4 text-3xl md:text-5xl">Applied thinking on healthcare, data, and AI.</h2>
+              </div>
+              <a href={writing.href} className="button-secondary">
+                Read article
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+            <div className="mt-8 rounded-[1.5rem] border border-[var(--line)] bg-[color:var(--card)]/70 p-5 md:p-6">
+              <div className="flex flex-wrap items-start justify-between gap-5">
+                <div>
+                  <h3 className="max-w-3xl text-2xl font-semibold tracking-tight">{writing.title}</h3>
+                  <p className="muted reading-width mt-3 text-sm leading-7">{writing.description}</p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {writing.tags.map((tag) => (
+                    <span key={tag} className="mini-tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </article>
         </section>
 
         <section id="about" className="mt-20 grid gap-6 xl:grid-cols-[1fr_0.95fr]">
